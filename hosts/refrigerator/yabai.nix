@@ -4,6 +4,9 @@
     enable = true;
     config = {
       layout = "bsp";
+      mouse_modifier = "alt";
+      mouse_action1 = "move";
+      mouse_action2 = "resize";
     };
     enableScriptingAddition = true;
     extraConfig = ''
@@ -27,6 +30,7 @@
       yabai -m rule --add app="Mullvad VPN" manage=off sticky=off layer=above
       yabai -m rule --add app="choose" manage=off
       yabai -m rule --add app="Activity Monitor" manage=off
+      yabai -m rule --add can-resize="^false$" manage=off
     '';
   };
 }

@@ -21,10 +21,15 @@
     '';
     defaults = {
       CustomSystemPreferences = {
+      };
+      CustomUserPreferences = {
         "com.apple.WindowManager" = {
-          "com.apple.WindowManager.StageManagerHideWidgets" = 1;
-          "com.apple.WindowManager.StandardHideWidgets" = 1;
+          StageManagerHideWidgets = 1;
+          StandardHideWidgets = 0;
         };
+        #"com.apple.wallpaper" = {
+        #SystemWallpaperURL = "file:///${builtins.toString ./.}/wallpapers/m.jpg";
+        #};
       };
       LaunchServices.LSQuarantine = false;
       NSGlobalDomain = {
@@ -46,8 +51,6 @@
 
         # 120, 94, 68, 35, 25, 15
         InitialKeyRepeat = 15;
-
-        NSWindowResizeTime = 0.001;
         "com.apple.swipescrolldirection" = false;
       };
 
@@ -65,7 +68,7 @@
       dock = {
         autohide = true;
         mru-spaces = false;
-        autohide-time-modifier = 0.1;
+        autohide-time-modifier = 0.45;
         persistent-apps = [ "/Applications/Safari.app" ];
         show-process-indicators = false;
         showhidden = true;

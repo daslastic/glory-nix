@@ -36,11 +36,11 @@
         window = {
           dynamic_padding = true;
           dynamic_title = true;
-          opacity = 1.0;
+          opacity = 0.99;
           decorations = "buttonless";
           padding = {
-            x = 5;
-            y = 5;
+            x = 0;
+            y = 0;
           };
         };
         colors = {

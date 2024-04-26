@@ -8,6 +8,7 @@ in {
   ];
 
   users.users.${user} = {
+    shell = pkgs.fish;
     name = "${user}";
     home = "/${root}/${user}";
   };
@@ -17,10 +18,12 @@ in {
       ./git
       ./alacritty
       ./fish
+      ./lsd
       {
         h.git.enable = lib.mkDefault true;
         h.alacritty.enable = lib.mkDefault true;
         h.fish.enable = lib.mkDefault true;
+        h.lsd.enable = lib.mkDefault true;
       }
     ];
 
