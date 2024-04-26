@@ -9,8 +9,6 @@
       hostName = config.sys.host;
     };
 
-    environment.systemPackages = [ pkgs.vim pkgs.neovim ];
-
     programs = {
       zsh.enable = true;
     };

@@ -3,11 +3,11 @@
   lib,
   ...
 }: {
-  options.home = {
+  options.h = {
     git.enable = lib.mkEnableOption "Enable git.";
   };
 
-  config = lib.mkIf config.home.git.enable {
+  config = lib.mkIf config.h.git.enable {
     programs.git = {
       enable = true;
       userName  = "daslastic";

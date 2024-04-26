@@ -2,26 +2,30 @@
 {
   security.pki.installCACerts = false;
 
-  environment.systemPackages = with pkgs; [ alacritty ];
-
-  services = {
-    yabai = {
-      enable = true;
-      package = pkgs.yabai;
-    };
-
-    skhd.enable = true;
-  };
+  imports = [
+    ./yabai.nix
+    ./skhd.nix
+  ];
 
   fonts = {
     fontDir.enable = true;
     fonts = [
-      (pkgs.nerdfonts.override { fonts = [ "CascadiaCode" ]; })
+      (pkgs.nerdfonts.override { fonts = [ "CascadiaCode" "FiraCode" "Noto" ]; })
     ];
   };
 
   system = {
+    activationScripts.postUserActivation.text = ''
+      # Following line should allow us to avoid a logout/login cycle
+      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+    '';
     defaults = {
+      CustomSystemPreferences = {
+        "com.apple.WindowManager" = {
+          "com.apple.WindowManager.StageManagerHideWidgets" = 1;
+          "com.apple.WindowManager.StandardHideWidgets" = 1;
+        };
+      };
       LaunchServices.LSQuarantine = false;
       NSGlobalDomain = {
         # https://github.com/LnL7/nix-darwin/blob/230a197063de9287128e2c68a7a4b0cd7d0b50a7/modules/system/defaults/NSGlobalDomain.nix
@@ -48,7 +52,7 @@
       };
 
       spaces = {
-        spans-displays = true;
+        spans-displays = false;
       };
 
       trackpad = {
@@ -61,12 +65,11 @@
       dock = {
         autohide = true;
         mru-spaces = false;
-        autohide-delay = 0.0;
-        expose-animation-duration = 0.0;
         autohide-time-modifier = 0.1;
-        persistent-apps = [ "/Applications/Safari.app" "${pkgs.alacritty}/Applications/Alacritty.app/" ];
+        persistent-apps = [ "/Applications/Safari.app" ];
         show-process-indicators = false;
         showhidden = true;
+        minimize-to-application = true;
         show-recents = false;
         tilesize = 64;
         # mission control on top right corner
@@ -80,12 +83,13 @@
       };
       finder = {
         # show icons on desktop
-        CreateDesktop = true;
+        CreateDesktop = false;
         FXPreferredViewStyle = "clmv";
         FXEnableExtensionChangeWarning = false;
       };
       loginwindow = {
         LoginwindowText = "yo momma gay";
+        GuestEnabled = false;
       };
       screencapture = {
         location = "~/Pictures/Screenshots";
