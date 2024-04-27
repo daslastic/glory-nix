@@ -9,6 +9,10 @@
   };
 
   config = lib.mkIf config.h.fish.enable {
+    programs.fish = {
+      enable = true;
+    };
+
     home-manager.users.${config.h.username} = {
       programs.fish = {
         enable = true;

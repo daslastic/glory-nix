@@ -9,10 +9,6 @@
       hostName = config.sys.host;
     };
 
-    programs = {
-      zsh.enable = true;
-    };
-
     nix = {
       registry.nixpkgs.flake = inputs.nixpkgs;
 

@@ -4,7 +4,6 @@ let
   root = config.sys.home-root;
 in {
   users.users.${user} = {
-    shell = pkgs.fish;
     name = "${user}";
     home = "/${root}/${user}";
   };
@@ -17,7 +16,6 @@ in {
     ./fish
     ./alacritty
     ./tmux
-    ./fzf
     ./git
     ./lsd
     {
@@ -26,7 +24,6 @@ in {
       h.lsd.enable = lib.mkDefault true;
       h.git.enable = lib.mkDefault true;
       h.tmux.enable = lib.mkDefault true;
-      h.fzf.enable = lib.mkDefault true;
     }
   ];
 
@@ -35,10 +32,18 @@ in {
       nix-index = {
         enable = false;
       };
+      fzf = {
+        enable = true;
+      };
     };
 
     home = {
       stateVersion = "24.05";
+      sessionVariables = {
+        EDITOR = "nvim";
+        VISUAL = "nvim";
+        SHELL = "/run/current-system/sw/bin/fish";
+      };
     };
   };
 }
