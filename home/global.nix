@@ -14,6 +14,7 @@
       neovim
       ripgrep
       vimv
+      go
 
       ## SUPER IMPORTANT
       sl

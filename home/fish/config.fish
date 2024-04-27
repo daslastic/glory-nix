@@ -11,7 +11,10 @@ set -x fish_clear 'clear; commandline -f repaint'
 
 set -x NPM_CONFIG_PREFIX "$XDG_DATA_HOME/npm"
 set -x NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/config"
+set -x GOPATH "$XDG_DATA_HOME/go"
+set -x CARGO_HOME "$XDG_DATA_HOME/cargo"
 fish_add_path $XDG_DATA_HOME/npm/bin
+fish_add_path $CARGO_HOME/bin
 
 bind -M default \cf fzf_cmd
 bind -M insert \cf fzf_cmd

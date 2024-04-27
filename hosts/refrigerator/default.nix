@@ -90,7 +90,8 @@
       };
       finder = {
         # show icons on desktop
-        CreateDesktop = false;
+        # required for yabai
+        CreateDesktop = true;
         FXPreferredViewStyle = "clmv";
         FXEnableExtensionChangeWarning = false;
       };
