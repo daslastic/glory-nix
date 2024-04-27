@@ -10,27 +10,6 @@
     services.nix-daemon.enable = true;
     security.pam.enableSudoTouchIdAuth = true;
 
-    # remove need for sudo
-    environment = {
-      # NOTE: handy as a default term for the desktop env
-      shells = [ pkgs.fish ];
-      loginShell = pkgs.fish;
-      etc = {
-        "sudoers.d/10-nix-commands".text = let
-          commands = [
-            "/run/current-system/sw/bin/darwin-rebuild"
-            "/run/current-system/sw/bin/nix*"
-            "/run/current-system/sw/bin/ln"
-            "/nix/store/*/activate"
-            "/bin/launchctl"
-          ];
-          commandsString = builtins.concatStringsSep ", " commands;
-        in ''
-          %admin ALL=(ALL:ALL) NOPASSWD: ${commandsString}
-        '';
-      };
-    };
-
     system = {
       stateVersion = lib.mkForce 4;
     };

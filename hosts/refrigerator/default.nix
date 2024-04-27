@@ -1,5 +1,9 @@
-{ self, config, pkgs, ... }:
+{ self, config, lib, pkgs, ... }:
 {
+  home-manager.users.${config.h.username} = {
+  };
+
+  #config.h.shell.prefix_color = lib.mkForce "magenta";
   security.pki.installCACerts = false;
 
   imports = [

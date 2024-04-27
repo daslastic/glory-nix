@@ -2,11 +2,12 @@
 {
   imports = [
     ./lualine.nix
+    ./telescope
   ];
 
   programs.nixvim = {
     plugins = {
-      fidget.enable = true;
+      #fidget.enable = true;
       treesitter = {
         enable = true;
         nixGrammars = true;
@@ -15,7 +16,7 @@
 
       nvim-autopairs.enable = true;
       ts-autotag.enable = true;
-      lazy.enable = true;
+      #lazy.enable = true;
     };
   };
 }

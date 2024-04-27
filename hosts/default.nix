@@ -2,9 +2,9 @@
 
 let
   inextricables = with inputs.self.nixosModules; [
+    modules
     darwin
     nixsys
-    system
   ];
 
   macGenesis =
@@ -18,7 +18,6 @@ let
         modules = with inputs.self.nixosModules; [
           inputs.home-manager.darwinModules.home-manager
           inputs.nixvim.nixDarwinModules.nixvim
-          ./global.nix
           ../vim
           ../home
           {
@@ -38,6 +37,9 @@ in
         hostName = "refrigerator";
         modules = [
           ./refrigerator
+          {
+            config.h.shell.prefix_colour = "magenta";
+          }
         ];
       };
     };

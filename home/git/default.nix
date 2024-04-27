@@ -8,10 +8,12 @@
   };
 
   config = lib.mkIf config.h.git.enable {
-    programs.git = {
-      enable = true;
-      userName  = "daslastic";
-      userEmail = "daslastic@gmail.com";
+    home-manager.users.${config.h.username} = { ... }: {
+      programs.git = {
+        enable = true;
+        userName  = "daslastic";
+        userEmail = "daslastic@gmail.com";
+      };
     };
   };
 }
