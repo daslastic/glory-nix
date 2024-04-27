@@ -11,7 +11,9 @@
       tree
 
       ## IMPORTANT UTILS
+      neovim
       ripgrep
+      vimv
 
       ## SUPER IMPORTANT
       sl
@@ -25,10 +27,10 @@
     };
   };
 
-
   home-manager.users.${config.h.username} = {
     home.shellAliases = {
       vim = "nvim";
+      tree = "tree -C";
     };
   };
 }

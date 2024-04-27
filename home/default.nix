@@ -1,11 +1,8 @@
 { config, lib, pkgs, ... }:
-let
-  user = config.h.username;
-  root = config.sys.home-root;
-in {
-  users.users.${user} = {
-    name = "${user}";
-    home = "/${root}/${user}";
+{
+  users.users.${config.h.username} = {
+    name = "${config.h.username}";
+    home = "/${config.sys.home-root}/${config.h.username}";
   };
 
   imports = [
@@ -18,6 +15,7 @@ in {
     ./tmux
     ./git
     ./lsd
+    ./npm
     {
       h.alacritty.enable = lib.mkDefault true;
       h.fish.enable = lib.mkDefault true;
@@ -35,6 +33,10 @@ in {
       fzf = {
         enable = true;
       };
+    };
+
+    xdg = {
+      enable = true;
     };
 
     home = {

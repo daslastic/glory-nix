@@ -17,8 +17,6 @@ let
         } // args.specialArgs or { };
         modules = with inputs.self.nixosModules; [
           inputs.home-manager.darwinModules.home-manager
-          inputs.nixvim.nixDarwinModules.nixvim
-          ../vim
           ../home
           {
             sys.host = "${args.hostName}";
