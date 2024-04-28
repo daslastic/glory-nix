@@ -1,9 +1,5 @@
-{ self, config, lib, pkgs, ... }:
+{ pkgs, ... }:
 {
-  home-manager.users.${config.h.username} = {
-  };
-
-  #config.h.shell.prefix_color = lib.mkForce "magenta";
   security.pki.installCACerts = false;
 
   imports = [
@@ -19,10 +15,6 @@
   };
 
   system = {
-    activationScripts.postUserActivation.text = ''
-      # Following line should allow us to avoid a logout/login cycle
-      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
-    '';
     defaults = {
       CustomSystemPreferences = {
       };
@@ -89,7 +81,6 @@
         dashboard-in-overlay = false;
       };
       finder = {
-        # show icons on desktop
         # required for yabai
         CreateDesktop = true;
         FXPreferredViewStyle = "clmv";

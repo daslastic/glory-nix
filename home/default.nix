@@ -1,13 +1,10 @@
 { config, lib, pkgs, ... }:
 {
-  users.users.${config.h.username} = {
-    name = "${config.h.username}";
-    home = "/${config.sys.home-root}/${config.h.username}";
-  };
-
   imports = [
     # VITAL
+    ./home-config.nix
     ./global.nix
+    ./dev
     ./fd
 
     ./fish
@@ -15,7 +12,6 @@
     ./tmux
     ./git
     ./lsd
-    ./npm
     {
       h.alacritty.enable = lib.mkDefault true;
       h.fish.enable = lib.mkDefault true;
@@ -24,6 +20,11 @@
       h.tmux.enable = lib.mkDefault true;
     }
   ];
+
+  users.users.${config.h.username} = {
+    name = "${config.h.username}";
+    home = "${config.h.homePath}";
+  };
 
   home-manager.users.${config.h.username} = {
     programs = {
@@ -37,6 +38,8 @@
 
     xdg = {
       enable = true;
+      configHome = "${config.h.configHome}";
+      dataHome = "${config.h.dataHome}";
     };
 
     home = {
@@ -44,7 +47,7 @@
       sessionVariables = {
         EDITOR = "nvim";
         VISUAL = "nvim";
-        SHELL = "/run/current-system/sw/bin/fish";
+        SHELL = "${pkgs.fish}/bin/fish";
       };
     };
   };

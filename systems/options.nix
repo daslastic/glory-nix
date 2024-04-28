@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, ... }:
 {
   options = {
     h = {
@@ -16,6 +16,22 @@
           description = "Your shell color.";
         };
       };
+      homePath = lib.mkOption {
+        type = with lib.types; str;
+        description = "Your systems home path. Must be defined explicitly.";
+      };
+      dataHome = lib.mkOption {
+        type = with lib.types; str;
+        description = "XDG_DATAHOME. Must be defined explicitly.";
+      };
+      configHome = lib.mkOption {
+        type = with lib.types; str;
+        description = "XDG_CONFIGHOME. Must be defined explicitly.";
+      };
+      cacheHome = lib.mkOption {
+        type = with lib.types; str;
+        description = "XDG_CACHEHOME. Must be defined explicitly.";
+      };
     };
     sys = {
       host = lib.mkOption {
@@ -26,7 +42,7 @@
         type = with lib.types; str;
         description = "Your systems architecture. Must be defined explicitly.";
       };
-      home-root = lib.mkOption {
+      homeRoot = lib.mkOption {
         type = with lib.types; str;
         description = "Your systems root home path. Must be defined explicitly.";
       };

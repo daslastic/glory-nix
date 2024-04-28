@@ -1,8 +1,8 @@
-{ inputs, config, ... }:
+{ inputs, ... }:
 
 let
   inextricables = with inputs.self.nixosModules; [
-    modules
+    options
     darwin
     nixsys
   ];
@@ -15,7 +15,7 @@ let
         specialArgs = {
           inherit inputs;
         } // args.specialArgs or { };
-        modules = with inputs.self.nixosModules; [
+        modules = (args.modules or [ ]) ++ [
           inputs.home-manager.darwinModules.home-manager
           ../home
           {
@@ -23,7 +23,7 @@ let
             sys.system = "${args.system}";
             sys.darwin.enable = true;
             sys.nix.enable = true;
-          }] ++ inextricables ++ (args.modules or [ ]);
+          }] ++ inextricables;
       }
     ));
 in

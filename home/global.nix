@@ -10,12 +10,6 @@
       htop
       tree
 
-      ## IMPORTANT UTILS
-      neovim
-      ripgrep
-      vimv
-      go
-
       ## SUPER IMPORTANT
       sl
     ];
@@ -24,7 +18,7 @@
     loginShell = pkgs.dash;
 
     variables = {
-      SHELL = "/run/current-system/sw/bin/dash";
+      SHELL = "${pkgs.dash}/bin/dash";
     };
   };
 

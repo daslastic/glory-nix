@@ -8,7 +8,7 @@
   };
 
   config = lib.mkIf config.h.git.enable {
-    home-manager.users.${config.h.username} = { ... }: {
+    home-manager.users.${config.h.username} = {
       programs.git = {
         enable = true;
         userName  = "daslastic";

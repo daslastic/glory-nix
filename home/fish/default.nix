@@ -17,6 +17,7 @@
       xdg.configFile = {
         "fish/themes/fishsticks.theme".source = ./fishsticks.theme;
       };
+
       programs.fish = {
         enable = true;
         shellInit = builtins.readFile ./config.fish;
