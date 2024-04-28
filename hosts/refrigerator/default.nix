@@ -5,6 +5,7 @@
   imports = [
     ./yabai.nix
     ./skhd.nix
+    ./apps.nix
   ];
 
   fonts = {

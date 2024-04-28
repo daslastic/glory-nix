@@ -21,7 +21,7 @@
     xdg = {
       configFile = {
         "npm/config".text = ''
-          cache=/${config.h.cacheHome}/npm
+          cache=${config.h.cacheHome}/npm
         '';
       };
     };
