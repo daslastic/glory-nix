@@ -5,8 +5,8 @@
     casks = [
       "tidal"
     ];
-    masApps = {
-      infuse = 1136220934;
-    };
+    #masApps = {
+    #  infuse = 1136220934;
+    #};
   };
 }
