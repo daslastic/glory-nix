@@ -35,7 +35,6 @@ alt - down : yabai -m window --swap south
 
 # spawn
 alt - return : open -n -a alacritty
-shift + alt - r : yabai --restart-service
 
 # stacked layout
 alt - t : [ $(yabai -m query --spaces --space | jq -re '.type') = "bsp" ] \

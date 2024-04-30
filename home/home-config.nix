@@ -5,7 +5,7 @@
 
   config = {
     # xdg.configHome wasn't working...
-    # I saw examples of it being used, I tried it all
+    # this is better no cope
     h.homePath = "/${config.sys.homeRoot}/${config.h.username}";
     h.dataHome = "${config.h.homePath}/.local/share";
     h.configHome = "${config.h.homePath}/.config";

@@ -12,7 +12,7 @@
       nodejs
       go
 
-      # lsp used in nvim
+      # nix lsp used in nvim
       nil
     ];
   };

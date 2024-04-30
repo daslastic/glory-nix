@@ -20,6 +20,18 @@
         type = with lib.types; str;
         description = "Your systems home path. Must be defined explicitly.";
       };
+      devHome = lib.mkOption {
+        type = with lib.types; str;
+        # ~ is implicit
+        default = "dev";
+        description = "Development Directory.";
+      };
+      nixHome = lib.mkOption {
+        type = with lib.types; str;
+        # ~ is implicit
+        default = "nix";
+        description = "Nix's root. Your nix configuration should be here.";
+      };
       dataHome = lib.mkOption {
         type = with lib.types; str;
         description = "XDG_DATAHOME. Must be defined explicitly.";

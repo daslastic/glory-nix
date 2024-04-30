@@ -26,6 +26,7 @@
     home.shellAliases = {
       vim = "nvim";
       tree = "tree -C";
+      cleanup = "nix-collect-garbage";
     };
   };
 }
