@@ -8,7 +8,10 @@
       neofetch
       btop
       htop
+
+      ## UTIL
       tree
+      vimv
 
       ## SUPER IMPORTANT
       sl
@@ -26,7 +29,6 @@
     home.shellAliases = {
       vim = "nvim";
       tree = "tree -C";
-      cleanup = "nix-collect-garbage";
     };
   };
 }

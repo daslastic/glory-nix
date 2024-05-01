@@ -3,9 +3,11 @@
   security.pki.installCACerts = false;
 
   imports = [
+    # specific stuff for this computer
     ./yabai.nix
     ./skhd.nix
     ./apps.nix
+    ./scripts.nix
   ];
 
   fonts = {

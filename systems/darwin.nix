@@ -10,6 +10,7 @@
         upgrade = "darwin-rebuild switch --flake ${config.h.homePath}/${config.h.nixHome}#${config.sys.host}";
         upgraded = "darwin-rebuild boot --flake ${config.h.homePath}/${config.h.nixHome}#${config.sys.host}";
         update = "nix flake update ${config.h.homePath}/${config.h.nixHome}";
+        cleanup = "nix-collect-garbage -d";
       };
     };
 

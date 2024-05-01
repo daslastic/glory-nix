@@ -4,6 +4,7 @@
     enable = true;
     casks = [
       "tidal"
+      "firefox"
       "obs"
       "zed"
       "affinity-designer"

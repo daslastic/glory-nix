@@ -21,6 +21,7 @@
       programs.fish = {
         enable = true;
         shellInit = builtins.readFile ./config.fish;
+        interactiveShellInit = builtins.readFile ./map.fish;
         functions = {
           fish_mode_prompt = {
             body = "";

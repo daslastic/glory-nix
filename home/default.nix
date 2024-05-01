@@ -12,6 +12,7 @@
     ./tmux
     ./git
     ./lsd
+    ./scripts
     {
       h.alacritty.enable = lib.mkDefault true;
       h.fish.enable = lib.mkDefault true;
@@ -20,6 +21,11 @@
       h.tmux.enable = lib.mkDefault true;
     }
   ];
+
+  programs.direnv = {
+    silent = true;
+    enable = true;
+  };
 
   users.users.${config.h.username} = {
     name = "${config.h.username}";
