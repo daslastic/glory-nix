@@ -4,6 +4,7 @@
     systemPackages = with pkgs; [
       # editor
       neovim
+      zola
       ripgrep
 
       # languages

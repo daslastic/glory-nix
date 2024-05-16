@@ -8,13 +8,14 @@
     ./fd
 
     ./fish
-    ./alacritty
+    ./kitty
+    ./wezterm
     ./tmux
     ./git
     ./lsd
     ./scripts
     {
-      h.alacritty.enable = lib.mkDefault true;
+      h.kitty.enable = lib.mkDefault true;
       h.fish.enable = lib.mkDefault true;
       h.lsd.enable = lib.mkDefault true;
       h.git.enable = lib.mkDefault true;
@@ -39,6 +40,15 @@
       };
       fzf = {
         enable = true;
+        tmux.enableShellIntegration = false;
+        enableFishIntegration = false;
+        enableBashIntegration = false;
+        enableZshIntegration = false;
+        defaultOptions = [
+          "--height 100%"
+          "--layout=reverse"
+          "--exact"
+        ];
       };
     };
 

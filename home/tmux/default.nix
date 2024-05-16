@@ -35,6 +35,7 @@
         terminal = "screen-256color";
         mouse = true;
         prefix = "C-b";
+        sensibleOnTop = false;
         baseIndex = 1;
         disableConfirmationPrompt = true;
         customPaneNavigationAndResize = true;

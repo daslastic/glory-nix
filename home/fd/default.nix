@@ -8,6 +8,7 @@
     programs.fd = {
       enable = true;
       ignores = [
+        ".local"
         ".m2"
         ".cache"
         "Movies"

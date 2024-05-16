@@ -2,10 +2,13 @@
   environment = {
     systemPackages = with pkgs; [
       dash
+      tracy
+      imagemagick
+      hyperfine
 
       ## INFO
       onefetch
-      neofetch
+      fastfetch
       btop
       htop
 

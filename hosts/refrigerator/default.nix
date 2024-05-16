@@ -12,8 +12,10 @@
 
   fonts = {
     fontDir.enable = true;
-    fonts = [
-      (pkgs.nerdfonts.override { fonts = [ "CascadiaCode" "FiraCode" "Noto" ]; })
+    fonts = with pkgs; [
+      (nerdfonts.override { fonts = [ "CascadiaCode" "FiraCode" "Noto" ]; })
+      lato
+      ibm-plex
     ];
   };
 
@@ -69,7 +71,14 @@
         mru-spaces = false;
         autohide-time-modifier = 0.1;
         autohide-delay = 0.0;
-        persistent-apps = [ "/Applications/Safari.app" "/System/Applications/Mail.app" "/System/Applications/Messages.app/" "/Applications/Tidal.app" "/Applications/Infuse.app" ];
+        persistent-apps = [
+          # "/Applications/Safari.app"
+          "/Applications/Arc.app"
+          "/System/Applications/Mail.app"
+          "/System/Applications/Messages.app/"
+          "/Applications/Tidal.app"
+          "/Applications/Infuse.app"
+        ];
         show-process-indicators = false;
         showhidden = true;
         minimize-to-application = true;

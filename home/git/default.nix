@@ -13,6 +13,9 @@
         enable = true;
         userName  = "daslastic";
         userEmail = "daslastic@gmail.com";
+        ignores = [
+          ".DS_Store"
+        ];
       };
     };
   };

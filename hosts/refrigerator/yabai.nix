@@ -10,6 +10,7 @@
     };
     enableScriptingAddition = true;
     extraConfig = ''
+      yabai -m rule --add app="Godot" manage=off
       yabai -m rule --add app="^System" manage=off
       yabai -m rule --add title='^Settings' manage=off
       yabai -m rule --add app="^Software" manage=off

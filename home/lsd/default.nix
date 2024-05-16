@@ -11,7 +11,7 @@
   config = lib.mkIf config.h.lsd.enable {
     home-manager.users.${config.h.username} = {
       home.shellAliases = {
-        l = "${pkgs.lsd}/bin/lsd -lA";
+        s = "${pkgs.lsd}/bin/lsd -lA";
       };
 
       programs.lsd = {
