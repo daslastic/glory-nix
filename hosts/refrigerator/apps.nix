@@ -7,6 +7,9 @@
       upgrade = true;
       autoUpdate = true;
     };
+    brews = [
+      "choose-gui"
+    ];
     enable = true;
     casks = [
       "tidal"

@@ -32,6 +32,7 @@
   home-manager.users.${config.h.username} = {
     home.shellAliases = {
       vim = "nvim";
+      vi = "nvim";
       tree = "tree -C";
     };
   };

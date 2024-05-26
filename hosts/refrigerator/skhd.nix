@@ -41,11 +41,8 @@
       # spawn
       alt - return : ${pkgs.kitty}/bin/kitty --single-instance -d ~
       alt - m : music-play
-
-      # stacked layout
-      alt - t : [ $(yabai -m query --spaces --space | jq -re '.type') = "bsp" ] \
-                        && yabai -m config --space mouse layout stack \
-                        || yabai -m config --space mouse layout bsp
+      alt - b : list-bookmarks
+      alt + shift- b : mk-bookmark
 
       # resize
       shift + alt - h : yabai -m window --resize left:-50:0; yabai -m window --resize right:-50:0
