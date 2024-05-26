@@ -3,6 +3,7 @@
     systemPackages = with pkgs; [
       dash
       tracy
+      bat
       imagemagick
       hyperfine
 

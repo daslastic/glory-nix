@@ -9,7 +9,6 @@
 
     ./fish
     ./kitty
-    ./wezterm
     ./tmux
     ./git
     ./lsd
@@ -26,6 +25,7 @@
   programs.direnv = {
     silent = true;
     enable = true;
+    nix-direnv.enable = true;
   };
 
   users.users.${config.h.username} = {

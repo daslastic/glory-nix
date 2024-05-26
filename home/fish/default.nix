@@ -39,14 +39,6 @@
             '';
             onEvent = null;
           };
-          __add_newline_after_command = {
-            body = ''
-              if test "$argv[1]" != "clear"
-                printf "\n"
-              end
-            '';
-            onEvent = "fish_postexec";
-          };
         };
         plugins = [
           {

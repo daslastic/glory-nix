@@ -1,12 +1,15 @@
 { ... }:
 {
+  # B: quick
   homebrew = {
+    onActivation = {
+      cleanup = "zap";
+      upgrade = true;
+      autoUpdate = true;
+    };
     enable = true;
     casks = [
-      {
-        name = "tidal";
-        greedy = true;
-      }
+      "tidal"
       "arc"
       "parsec"
       "firefox"
@@ -18,8 +21,5 @@
       "affinity-photo"
       "blender"
     ];
-    #masApps = {
-    #  infuse = 1136220934;
-    #};
   };
 }

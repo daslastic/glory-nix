@@ -3,17 +3,30 @@
   environment = {
     systemPackages = with pkgs; [
       # editor
-      neovim
+      tree-sitter
       zola
       ripgrep
+      neovim
 
       # languages
-      nodePackages.npm
+      nodePackages_latest.npm
       nodejs
       go
 
-      # nix lsp used in nvim
+      vscode-langservers-extracted
       nil
+      rust-analyzer
+      lua-language-server
+      nodePackages_latest.typescript-language-server
+      nodePackages_latest.live-server
+      emmet-ls
+
+      # lua
+      luajit
+
+      # make css format
+      nodePackages_latest.prettier
+
       # apple
       xcodes
     ];
